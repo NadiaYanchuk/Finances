@@ -16,8 +16,8 @@
             class="form-help-text"
             *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
         >
-            <span *ngIf="form.get('email')?.errors?.['required']">Email не может быть пустым</span>
-            <span *ngIf="form.get('email')?.errors?.['email']">Введите корректный email</span>
+            <span *ngIf="form.get('email')?.errors?.['required']">E-mail cannot be empty!</span>
+            <span *ngIf="form.get('email')?.errors?.['email']">Enter a valid email address!</span>
         </span>
     </div>
 
@@ -37,10 +37,10 @@
             class="form-help-text"
             *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
         >
-            <span *ngIf="form.get('password')?.errors?.['required']">Пароль не может быть пустым</span>
+            <span *ngIf="form.get('password')?.errors?.['required']">The password cannot be empty!</span>
             <span *ngIf="form.get('password')?.errors?.['minlength']">
-                Введите пароль больше {{ form.get('password')?.errors?.['minlength']?.['requiredLength'] }} символов.
-                Сейчас {{ form.get('password')?.errors?.['minlength']?.['actualLength'] }}.
+                Enter a password greater than {{ form.get('password')?.errors?.['minlength']?.['requiredLength'] }} characters. <br>
+                It's currently {{ form.get('password')?.errors?.['minlength']?.['actualLength'] }} characters.
             </span>
         </span>
     </div>
