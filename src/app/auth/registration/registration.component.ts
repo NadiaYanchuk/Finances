@@ -15,9 +15,9 @@ export class RegistrationComponent implements OnInit {
 
     form!: FormGroup;
 
-    constructor(
-        private router: Router,
-        private usersService: UsersService
+    constructor (
+        private readonly router: Router,
+        private readonly usersService: UsersService
     ) {
     }
 

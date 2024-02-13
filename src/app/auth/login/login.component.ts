@@ -17,11 +17,11 @@ export class LoginComponent implements OnInit{
     form!: FormGroup;
     message!: Message;
 
-    constructor(
-        private userService: UsersService,
-        private authService: AuthService,
-        private router: Router,
-        private route: ActivatedRoute
+    constructor (
+        private readonly userService: UsersService,
+        private readonly authService: AuthService,
+        private readonly router: Router,
+        private readonly route: ActivatedRoute
     ) {
     }
 
@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit{
                     if (user.password === formData.password) {
                         window.localStorage.setItem('user', JSON.stringify(user))
                         this.authService.login();
-                        // this.router.navigate(['']);
+                        this.router.navigate(['/system', 'bill']);
                     } else {
                         this.showMessage("Invalid password!");
                     }
